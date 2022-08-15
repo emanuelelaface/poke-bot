@@ -131,6 +131,9 @@ def poke_scientists_photo(update, context):
     if not allowed:
         return
 
+    if update['message']['caption'] == None:
+        return
+
     scientists_to_call = []
     for word in update['message']['caption'].split():
         if word[0]=='#':
